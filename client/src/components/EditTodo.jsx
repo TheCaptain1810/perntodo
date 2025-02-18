@@ -6,18 +6,15 @@ const EditTodo = ({ todo }) => {
 
   //edit description function
 
-  const updateDescription = async e => {
+  const updateDescription = async (e) => {
     e.preventDefault();
     try {
       const body = { description };
-      await fetch(
-        `http://localhost:5000/todos/${todo.todo_id}`,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(body)
-        }
-      );
+      await fetch(`http://localhost:5000/todos/${todo.todo_id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
 
       window.location = "/";
     } catch (err) {
@@ -63,7 +60,7 @@ const EditTodo = ({ todo }) => {
                 type="text"
                 className="form-control"
                 value={description}
-                onChange={e => setDescription(e.target.value)}
+                onChange={(e) => setDescription(e.target.value)}
               />
             </div>
 
@@ -72,7 +69,7 @@ const EditTodo = ({ todo }) => {
                 type="button"
                 className="btn btn-warning"
                 data-dismiss="modal"
-                onClick={e => updateDescription(e)}
+                onClick={(e) => updateDescription(e)}
               >
                 Edit
               </button>

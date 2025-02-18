@@ -1,10 +1,9 @@
-import './App.css';
+import "./App.css";
 // Components
 import InputTodo from "./components/InputTodo.jsx";
 import ListTodos from "./components/ListTodos";
 
 function App() {
-
   return (
     <>
       <div className="container">
@@ -13,6 +12,6 @@ function App() {
       </div>
     </>
   );
-};
+}
 
 export default App;

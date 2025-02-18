@@ -7,13 +7,13 @@ const ListTodos = () => {
 
   //delete todo function
 
-  const deleteTodo = async id => {
+  const deleteTodo = async (id) => {
     try {
       await fetch(`http://localhost:5000/todos/${id}`, {
-        method: "DELETE"
+        method: "DELETE",
       });
 
-      setTodos(todos.filter(todo => todo.todo_id !== id));
+      setTodos(todos.filter((todo) => todo.todo_id !== id));
     } catch (err) {
       console.error(err.message);
     }
@@ -33,7 +33,7 @@ const ListTodos = () => {
   useEffect(() => {
     getTodos();
   }, []);
-  
+
   return (
     <>
       {" "}
@@ -51,7 +51,7 @@ const ListTodos = () => {
             <td>Doe</td>
             <td>john@example.com</td>
           </tr> */}
-          {todos.map(todo => (
+          {todos.map((todo) => (
             <tr key={todo.todo_id}>
               <td>{todo.description}</td>
               <td>
