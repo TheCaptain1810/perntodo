@@ -1,12 +1,16 @@
 import './App.css';
 // Components
 import InputTodo from "./components/InputTodo.jsx";
+import ListTodos from "./components/ListTodos";
 
 function App() {
 
   return (
     <>
-      <InputTodo />
+      <div className="container">
+        <InputTodo />
+        <ListTodos />
+      </div>
     </>
   );
 };
