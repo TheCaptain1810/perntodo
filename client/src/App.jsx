@@ -1,13 +1,14 @@
-import { useState } from 'react'
-import './App.css'
+import './App.css';
+// Components
+import InputTodo from "./components/InputTodo.jsx";
 
-function App() { 
+function App() {
 
   return (
     <>
-      <div>Hello, World!</div>
+      <InputTodo />
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
